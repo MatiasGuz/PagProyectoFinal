@@ -1,0 +1,51 @@
+{% extends 'plantillas/layout.html' %} 
+
+{% block content %} 
+
+<h1>{{user.username}}</h1>
+<table class="table text-center">
+    <thead>
+      <tr>
+        <th>Productos</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% if request.session.carrito.items %}
+            {% for key, value in request.session.carrito.items %}
+                <tr class = "text-center">
+                    <td>{{ value.nombre }} </td>
+                    <td>{{ value.cantidad }} 
+                        &nbsp;
+                        &nbsp;
+                        <a href ="{% url 'carrito:Restar' value.producto_id %}" class = "btn btn-success">-</a>
+                    </td>
+                    <td>{{ value.precio }} </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="4">
+                <div class="alert alert-danger text-center">
+                    Sin productos
+                </div>
+            </td>
+        </tr>
+        {% endif %}
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                Total: {{SumaTotal}}
+            </td>
+        </tr>
+    </tfoot>
+  </table>
+<div class="container">
+    <a href = "#" class = "btn btn-success" style = "float:right;">Realizar Compra</a>
+    <a href = "{% url 'carrito:Vaciar' %}" class = "btn btn-danger" style = "float:right;">Vaciar Carrito</a>
+    
+</div>
+{% endblock %} 

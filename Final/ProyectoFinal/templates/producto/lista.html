@@ -1,0 +1,60 @@
+{% extends 'plantillas/layout.html' %} 
+
+{% block content %}
+
+{% load humanize %}
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-center">
+            <h2>Lista de Productos</h2>
+        </div>
+    </div>
+</div>
+
+<br>
+<table class="table table-hover table-responsive-sm">
+	<thead class="thead-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Categoria</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+
+    {% for p in productos %}
+
+    <tr>
+        <td>{{ p.nombre | title }}</td>
+        <td>${{ p.precio | intcomma }}</td>
+        <td>{{ p.categorias | title }}</td>
+        <td>
+            <a href = "{% url 'Editar_Producto' p.id %}" class = "btn btn-info btn-sn">Modificar</a>
+           <a href = "#" onclick = "EliminarProducto({{ p.id }})" class = "btn btn-danger btn-sn">Eliminar</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+
+<script>
+    function EliminarProducto(id){
+        Swal.fire({
+            "title" : "¿Estás seguro?",
+            "text" : "Esta acción no se puede deshacer",
+            "icon" : "warning",
+            "showCancelButton": true,
+            "cancelButtonText": "No",
+            "confirmButtonText": "Si",
+            "confirmButtonColor": "red",
+            "cancelButtonColor": "gray",
+        })
+        .then(function(result){
+             if(result.isConfirmed){
+                window.location.href = "Eliminar/"+id+"/"
+            }
+        })
+    }
+</script>
+{% endblock %}

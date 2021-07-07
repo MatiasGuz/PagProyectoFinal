@@ -1,0 +1,210 @@
+/*Header*/
+.encabezado{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    background-color: lightblue;
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo img{
+    height: 55px;
+    width: 150px;
+    padding: 4px;
+}
+
+.BotonesEncabezado {
+    display: flex;
+    height: 10px;
+    margin-left: auto;
+    margin-top: 0;
+}
+
+.BotonesEncabezado ul{
+    display:flex;
+}
+
+.BotonesEncabezado ul li{
+    list-style:none;
+    display: flex;
+}
+
+.BotonesEncabezado ul li a{
+    display:block;
+    padding: 20px;
+    text-decoration:none;
+    color: black;
+}
+
+.BotonesEncabezado ul li a:hover{
+    color: blue;
+}
+
+                /*Menu*/  
+.contenedor-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    height: 40px;
+    top: 0;
+    background-color: lightblue;
+    left: 0;
+    right: 0;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: -10px;
+}
+
+.menu ul li{
+    display:flex;
+    margin: 10px;
+}
+
+.menu ul li a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.menu ul li a:hover{
+    color: blue;
+}
+
+#buscador{
+    font-size: 16px;
+    background-color: lightgray;
+    border: none;
+    outline: none;
+}
+.contenedor-busqueda{
+    position: relative;
+}
+
+.contenedor-busqueda button i {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contenedor-busqueda i:hover{
+    color: blue;
+}
+/*Contenido*/
+.contenido{
+    min-height: calc(100vh - 100px);
+}
+/*Home*/
+.titulo-producto{
+    display: flex;
+    justify-content: center;
+}
+.productos{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8px;
+}
+.contenedor-producto{
+    font-size: 15px;
+}
+
+.contenedor-producto img{
+    max-height: 120px;
+    max-width: 120px;
+}
+/*Contacto*/
+.TituloContacto{
+    display: flex;
+    justify-content: center;
+}
+
+.Contacto{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.form_input {
+    display: flex;
+    background-color: lightblue;
+    width: 800px;
+    padding: 8px;
+    margin: 15px;
+}
+.Contacto form textarea{
+    min-height: 150px;
+    min-width: 803px;
+    resize: none;
+}
+
+.Contacto form input[type = "submit"]{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 400px;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.Contacto form input[type = "submit"]:hover{
+    background: darkblue;
+    color: white;
+}
+.Contacto 
+/*Acerca de*/
+
+.InformacionEmpresa{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.InformacionEmpresa article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+/*Footer*/
+
+footer{
+    position:absolute;
+    width: 100%;
+    background-color:aqua;
+    color: black;
+    height: 40px;
+}
+.contenedor-footer{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: row;
+}
+
+
+.card {
+    width: 100%;
+}
+
+.card123 img{
+    max-height: 300px;
+    min-height: 300px;
+}

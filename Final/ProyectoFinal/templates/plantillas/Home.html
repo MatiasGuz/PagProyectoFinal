@@ -1,0 +1,37 @@
+{% extends 'plantillas/layout.html' %}
+{% load static %}
+
+{% block content %}
+{% load humanize %}
+
+<br>
+<h2 class = "titulo-producto">Productos</h2>
+<br>
+<div class="container">
+    <div class="row">
+        {% for p in productos %}
+        <div class="col-8 col-md-2 offset-md-2">
+            <div class="card" >
+                {% if p.imagen %}
+                <img src = "{{ p.imagen.url }}" class= "card-img-top" style="max-height: 100px;" alt = "imagen-producto">
+                {% endif %}
+                <div class = "card-body" style = "text-align: left; max-height: 100px;">
+                    <h5>{{ p.categorias }}</h5>
+                    <h3>{{ p.nombre }} </h3>
+                </div>
+                <br>
+                <div class = "card-footer" style="max-height: 40px;">
+                    <h3>${{ p.precio | intcomma}} </h3>
+                </div>
+                
+                <div class = "card-footer" style="text-align: center;">
+                    <a href = "{% url 'VerProducto' p.id %}" class= "btn btn-success">Ver Producto</a>
+                </div>
+            </div>
+        </div>   
+        {% endfor %}    
+    </div>
+</div>
+
+
+{% endblock %}

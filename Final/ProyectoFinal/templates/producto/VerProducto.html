@@ -1,0 +1,24 @@
+{% extends 'plantillas/layout.html'%}
+
+{% block content %} 
+{% load humanize %}
+
+<div class="container">
+    <div class="row">
+        <h1 class = "text-center">{{ producto.nombre}} </h1>
+        &nbsp;
+        &nbsp;
+        <div class="col text-center" style="margin-top: 50px;">
+            <p><img style= "max-height: 300px; min-height: 300px;" src = "{{ media_url }}{{ producto.imagen.url }}" alt = "{{ producto.imagen.name}}"></p>
+        </div>
+        <div class="col order-2" style = "margin-top: 60px;">
+
+            <h2>Categoria: {{ producto.categorias}}</h2>
+            <h4>Descripción: {{ producto.descripcion }}</h4>
+            <h3>${{ producto.precio | intcomma}}</h3>
+
+        </div>
+    </div>
+    <a href = "{% url 'carrito:Agregar' producto.id %}" class = "btn btn-success" style = "float:right">Agregar al carrito</a>
+</div>
+{% endblock %}
