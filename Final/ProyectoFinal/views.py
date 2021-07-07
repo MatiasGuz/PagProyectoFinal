@@ -8,7 +8,6 @@ from django.contrib  import messages
 from django.http import Http404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
-from django.db.models import Q
 # Create your views here.
 
 def Home(request):
@@ -108,5 +107,5 @@ def VerProducto(request, id):
     })
 
 def Carrito(request):
-    return render(request, "plantillas/Carrito.html")
+    return render(request, 'plantillas/carrito.html')
 
